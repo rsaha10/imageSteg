@@ -9,6 +9,3 @@ def userInput(input):
 
 def imageInfo(input, imgName):
     msgBits = len(input) * 8
-
-
-print ("yo bro tanzir")
