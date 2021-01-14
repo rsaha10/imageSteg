@@ -4,21 +4,20 @@ from PIL import Image
 
 def userInput(msg):
     binary = ''.join(format(ord(i), 'b') for i in msg)
-    
-    #print(binary)
+    return binary
 
 def imageInfo(msg, filename):
-    image = Image.open()
+    image = Image.open(filename)
     width, height = image.size
     totalPix =  width * height
     binary = userInput(msg)
     bitlength = len(binary)
     if (bitlength + 48 < totalPix):
-        encode(binary, image)
+        encode(binary, image, width, height)
 
 userInput("ABCdefg")
 
-def encode (binary, image):
+def encode (binary, image, width, height):
     imageRGB = image.convert("RGB")
     pixelRGBval = imageRGB.getpixel((10,15))
     numpy_array = np.array(image)
@@ -29,3 +28,5 @@ def encode (binary, image):
                 numpy_array[i][j][2] -=1 
     PIL_image = Image.fromarray(numpy_array.astype('uint8'), 'RGB')
     #PIL_image.save("test.jpg")
+
+imageInfo("test", "green.jpg")
