@@ -11,4 +11,4 @@ def imageInfo(input, imgName):
     msgBits = len(input) * 8
 
 
-print ("hello world")
+print ("yo tanzir")
