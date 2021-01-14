@@ -8,7 +8,8 @@ def userInput(msg):
     #print(binary)
 
 def imageInfo(msg, filename):
-    width, height = Image.open(filename).size
+    image = Image.open()
+    width, height = image.size
     totalPix =  width * height
     binary = userInput(msg)
     bitlength = len(binary)
