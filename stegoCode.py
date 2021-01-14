@@ -15,8 +15,6 @@ def imageInfo(msg, filename):
     msgBits = len(msg) * 8
     width, height = Image.open(filename).size
     totalPix =  width * height
-    image = Image.open(filename)
-    image = Image.open(filename) #fillinfilename
     imageRGB = image.convert("RGB")
     pixelRGBval = imageRGB.getpixel((10,15))
     numpy_array = np.array(image)
