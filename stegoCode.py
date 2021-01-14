@@ -1,7 +1,8 @@
 import numpy
-import Pillow
+import PIL
+from PIL import Image
 
-image = PIL.Image.open("file name") //fill in file name
+image = PIL.Image.open("file name") #fillinfilename
 
 def userInput(input):
     binary = ''.join(format(ord(i), 'b') for i in input)
@@ -13,5 +14,4 @@ def imageInfo(input, imgName):
 
 userInput("ABCdefg")
 
-def rgbValue (image):
-    
+#def rgbValue (image):
