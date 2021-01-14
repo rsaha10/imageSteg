@@ -3,7 +3,7 @@ import PIL
 from PIL import Image
 
 
-#PIL_image.save("test.jpg")
+
 #print (numpy_array[1][2][2])
 
 def userInput(msg):
@@ -23,6 +23,7 @@ def imageInfo(msg, filename):
             if (numpy_array[i][j][2]%2 != 0):
                 numpy_array[i][j][2] -=1 
     PIL_image = Image.fromarray(numpy_array.astype('uint8'), 'RGB')
+    PIL_image.save("test.jpg")
 
 userInput("ABCdefg")
 
