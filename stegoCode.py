@@ -39,13 +39,13 @@ def encodeBit(binary, numpy_array, width, height):
     PIL_image = Image.fromarray(numpy_array.copy().astype(np.uint8))
     PIL_image.save("test.png")
     PIL_image.close()
-    image = Image.open("test.png")
-    newarr = np.array(image)
-    image.close()
-    for i in range(len(binary)):
-        h = i%height
-        w = i//height
-        print ("w: ", w, "h: ", h, "value ", newarr[w, h, 1])
+##    image = Image.open("test.png")
+##    newarr = np.array(image)
+##    image.close()
+##    for i in range(len(binary)):
+##        h = i%height
+##        w = i//height
+##        print ("w: ", w, "h: ", h, "value ", newarr[w, h, 1])
     
 
 def decode(filename):
@@ -58,7 +58,7 @@ def decode(filename):
     for i in range(80):
         h = i%height
         w = i//height
-        print ("w: ", w, "h: ", h, "value ", numpy_array[w, h, 1])
+##        print ("w: ", w, "h: ", h, "value ", numpy_array[w, h, 1])
     for w in range (width):
         if (not found):
             for h in range (height):
@@ -66,14 +66,13 @@ def decode(filename):
                 #print(binary)
                 if (len(binary)==8):
                     answer += chr(int(binary,2))
-                    print (binary)
+                    #print (binary)
                     #print (chr(int(binary,2)))
                     binary = ""
                 if ("aspscv" in answer):
                     found = True
-                    print("lol")
                     break
-    print (answer)
+    print (answer[:len(answer)-6])
 
 encode("test", "green.jpg")
 decode("test.png")
